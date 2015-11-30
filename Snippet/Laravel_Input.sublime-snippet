@@ -1,0 +1,46 @@
+<snippet>
+	<content>
+Input 
+	${1:Input::get('key');}
+	// Default if the key is missing
+	${2:Input::get('key', 'default');}
+	${3:Input::has('key');}
+	${4:Input::all();}
+	// Only retrieve 'foo' and 'bar' when getting input
+	${5:Input::only('foo', 'bar');}
+	// Disregard 'foo' when getting input
+	${6:Input::except('foo');}
+
+Session Input (flash)
+	// Flash input to the session
+	${7:Input::flash();}
+	// Flash only some of the input to the session
+	${8:Input::flashOnly('foo', 'bar');}
+	// Flash only some of the input to the session
+	${9:Input::flashExcept('foo', 'baz');}
+	// Retrieve an old input item
+	${10:Input::old('key','default_value');}
+
+Files
+	// Use a file that's been uploaded
+	${11:Input::file('filename');}
+	// Determine if a file was uploaded
+	${12:Input::hasFile('filename');}
+	// Access file properties
+	${13:Input::file('name')->getRealPath();}
+	${14:Input::file('name')->getClientOriginalName();}
+	${15:Input::file('name')->getClientOriginalExtension();}
+	${16:Input::file('name')->getSize();}
+	${17:Input::file('name')->getMimeType();}
+	// Move an uploaded file
+	${18:Input::file('name')->move($destinationPath);}
+	// Move an uploaded file
+	${19:Input::file('name')->move($destinationPath, $fileName);}
+
+</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>la.Input</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>Input</description>
+</snippet>

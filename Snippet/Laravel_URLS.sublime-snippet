@@ -1,0 +1,26 @@
+<snippet>
+	<content>
+URLs 
+	${1:URL::full();}
+	${2:URL::current();}
+	${3:URL::previous();}
+	${4:URL::to('foo/bar', \$parameters, \$secure);}
+	${5:URL::action('FooController@method', \$parameters, \$absolute);}
+	${6:URL::route('foo', \$parameters, \$absolute);}
+	${7:URL::secure('foo/bar', \$parameters);}
+	${8:URL::asset('css/foo.css', \$secure);}
+	${9:URL::secureAsset('css/foo.css');}
+	${10:URL::isValidUrl('http://example.com');}
+	${11:URL::getRequest();}
+	${12:URL::setRequest(\$request);}
+	${13:URL::getGenerator();}
+	${14:URL::setGenerator(\$generator);}
+                
+
+</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>la.URLS</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>URLS</description>
+</snippet>

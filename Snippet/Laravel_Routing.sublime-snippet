@@ -1,0 +1,80 @@
+<snippet>
+	<content>
+Routing 
+	${1:Route::get('foo', function(){\});}
+	${2:Route::get('foo', 'ControllerName@function');}
+	${3:Route::controller('foo', 'FooController');}
+
+RESTful Controllers
+	${4:Route::resource('posts','PostsController');}
+	//Specify a subset of actions to handle on the route
+	${5:Route::resource('photo', 'PhotoController',['only' => ['index', 'show']]);}
+	${6:Route::resource('photo', 'PhotoController',['except' => ['update', 'destroy']]);}
+
+Triggering Errors
+	${7:App::abort(404);}
+	${8:App::missing(function($exception){\});}
+	${9:throw new NotFoundHttpException;}
+
+Route Parameters
+	${10:Route::get('foo/{bar}', function($bar){\});}
+	${11:Route::get('foo/{bar?}', function($bar = 'bar'){\}); }
+
+HTTP Verbs
+	${12:Route::any('foo', function(){\});}
+	${13:Route::post('foo', function(){\});}
+	${14:Route::put('foo', function(){\});}
+	${15:Route::patch('foo', function(){\});}
+	${16:Route::delete('foo', function(){\});}
+	// RESTful actions
+	${17:Route::resource('foo', 'FooController');}
+
+Secure Routes
+	${18:Route::get('foo', array('https', function(){\}));}
+	${19:Route Constraints}
+	${20:Route::get('foo/{bar}', function($bar){\})
+	->where('bar', '[0-9]+');}
+	${21:Route::get('foo/{bar}/{baz}', function($bar, $baz){\})
+	->where(array('bar' => '[0-9]+', 'baz' => '[A-Za-z]'))}
+
+// Set a pattern to be used across routes
+	${22:Route::pattern('bar', '[0-9]+')}
+
+Filters
+	// Declare an auth filter
+	${23:Route::filter('auth', function(){\});}
+	// Register a class as a filter
+	${24:Route::filter('foo', 'FooFilter');}
+	${25:Route::get('foo', array('before' => 'auth', function(){\}));}
+	// Routes in this group are guarded by the 'auth' filter
+	${26:Route::get('foo', array('before' => 'auth', function(){\}));}
+	${27:Route::group(array('before' => 'auth'), function(){\});}
+	// Pattern filter
+	${28:Route::when('foo/*', 'foo');}
+	// HTTP verb pattern
+	${29:Route::when('foo/*', 'foo', array('post'));}
+
+Named Routes
+	${30:Route::currentRouteName();}
+	${31:Route::get('foo/bar', array('as' => 'foobar', function(){\}));}
+
+Route Prefixing
+	// This route group will carry the prefix 'foo'
+	${32:Route::group(array('prefix' => 'foo'), function(){\})}
+
+Route Namespacing
+	// This route group will carry the namespace 'Foo\Bar'
+	${33:Route::group(array('namespace' => 'Foo\Bar'), function(){\})}
+
+Sub-Domain Routing
+	// {sub} will be passed to the closure
+	${34:Route::group(array('domain' => '{sub}.example.com'), function(){\});}
+                
+
+</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>la.Routing</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>Routing</description>
+</snippet>

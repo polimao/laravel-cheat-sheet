@@ -1,0 +1,40 @@
+<snippet>
+	<content>
+laravel 工具工具箱
+数组
+	1、list(\$key, \$value) = array_divide(\$array); 以键名，键值分开成为两个数组
+	2、array_dot(\$array); 把多维数组扁平化成一维数组，用逗号标示深度
+	3、array_fetch(\$array,''); 回传包含被选择的巢状元素的扁平化数组
+	4、 array_first(\$array,func);回传数组中第一个通过给定的测试为真的元素
+	5、array_last();
+	6、array_flatten(\$array); 将多维数组扁平化成一维
+	7、head(\$array) 获得第一个值
+	8、last(\$array) 获得最后一个值
+	9、app_path();获得app在系统中绝对路径 ~~ base_path();public_path();storage_path();
+字符串
+	10、camel_case('foo_bar'); 将字符串 驼峰
+	10.5、snake_case('fooBar');把给定的字串转换成 蛇形命名。
+	10.6、studly_case('foo_bar');把给定字串转换成 首字大写命名。
+	11、e('html>foo/html>'); 对给定字串执行 htmlentities，并支持 UTF-8。
+	12、ends_with('This is my name', 'name');判断句子结尾是否有给定的字串。
+	12.5、starts_with('This is my name', 'This');
+	12.6、str_contains('This is my name', 'my');
+	13、str_limit(\$value, \$limit = 100, \$end = '...'); 限制字串的字串数量。
+	14、\$value = str_is('foo*', 'foobar');判断字串是否符合给定的模式。 星号可以用来当作通配符。
+	15、str_plural('car');把字串转换成它的多数形态 (只有英文)。
+	15.5、str_singular('cars');
+	16、str_random(40);产生给定长度的随机字串。
+网址
+	17、action('HomeController@getIndex', \$params);产生给定控制器行为的网址。
+	18、route('routeName', \$params);产生给定路由名称的网址。
+	19、asset('img/photo.jpg');产生资产的网址。
+	20、with(new Foo)->doWork();回传给定对象。 对 PHP 5.3.x 的建构式方法链很有用。
+
+	</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>la.Tool</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>Tool</description>
+</snippet>
+

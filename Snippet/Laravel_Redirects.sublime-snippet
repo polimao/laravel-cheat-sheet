@@ -1,0 +1,29 @@
+<snippet>
+	<content>
+Redirects 
+	${1:return Redirect::to('foo/bar');}
+	${2:return Redirect::to('foo/bar')->with('key', 'value');}
+	${3:return Redirect::to('foo/bar')->withInput(Input::get());}
+	${4:return Redirect::to('foo/bar')->withInput(Input::except('password'));}
+	${5:return Redirect::to('foo/bar')->withErrors($validator);}
+	// Create a new redirect response to the previous location
+	${6:return Redirect::back();}
+	// Create a new redirect response to a named route
+	${7:return Redirect::route('foobar');}
+	${8:return Redirect::route('foobar', array('value'));}
+	${9:return Redirect::route('foobar', array('key' => 'value'));}
+	// Create a new redirect response to a controller action
+	${10:return Redirect::action('FooController@index');}
+	${11:return Redirect::action('FooController@baz', array('value'));}
+	${12:return Redirect::action('FooController@baz', array('key' => 'value'));}
+	// If intended redirect is not defined, defaults to foo/bar.
+	${13:return Redirect::intended('foo/bar');}
+            
+
+</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>la.Redirects</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>Redirects</description>
+</snippet>

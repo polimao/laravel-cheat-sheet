@@ -1,0 +1,28 @@
+<snippet>
+	<content>
+Views
+	${1:View::make('path/to/view');}
+	${3:View::make('foo/bar')->with('key', 'value');}
+	${4:View::make('foo/bar')->withKey('value');}
+	${5:View::make('foo/bar', array('key' => 'value'));}
+	${6:View::exists('foo/bar');}
+	// Share a value across all views
+	 ${7:View::share('key', 'value');}
+	// Nesting views
+	 ${8:View::make('foo/bar')->nest('name', 'foo/baz', $data);}
+	// Register a view composer
+	 ${9:View::composer('viewname', function($view){});}
+	//Register multiple views to a composer
+	 ${10:View::composer(array('view1', 'view2'), function($view){});}
+	// Register a composer class
+	 ${11:View::composer('viewname', 'FooComposer');}
+	 ${12:View::creator('viewname', function($view){});}
+                
+
+</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>la.View</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>Views</description>
+</snippet>

@@ -1,0 +1,98 @@
+<snippet>
+	<content>
+	从数据库表中取得单一数据列的单一字段
+	$name = DB::table('users')->where('name', 'John')->pluck('name');
+	取得单一字段值的列表
+	$roles = DB::table('roles')->lists('title');
+	这个方法将会回传含有数据库表 role 的 title 字段值的数组。您也可以通过下面的方法，为回传的数组指定自定义键值。
+	$roles = DB::table('roles')->lists('title', 'name');
+	$users = DB::table('users')->select('name as user_name')->get();
+	增加查询子句到现有的的查询中
+	$query = DB::table('users')->select('name');
+	$users = $query->addSelect('age')->get();
+	DB::transaction(function()
+	{
+	    DB::table('users')->update(array('votes' => 1));
+	    DB::table('posts')->delete();
+	});
+	    注意: 任何 transaction 抛出的异常都将导致事务自动回滚.
+	有时你需要自己手动开启一个事务:
+	DB::beginTransaction();
+	你可以用过 rollback 方法手动回滚事务:
+	DB::rollback();
+	最后,你可以使用 commit 方法来提交:
+	DB::commit();
+Eloquent 
+	${1:Model::create(array('key' => 'value'));}
+	// Find first matching record by attributes or create
+	${2:Model::firstOrCreate(array('key' => 'value'));}
+	// Find first record by attributes or instantiate
+	${3:Model::firstOrNew(array('key' => 'value'));}
+	// Create or update a record matching attibutes, and fill with values
+	${4:Model::updateOrCreate($attributes = array('key' => 'value'), $values = array('key' => 'value'));}
+	// Fill a model with an array of attributes, beware of mass assignment!
+	${5:Model::fill($attributes);}
+	${6:Model::destroy(1);}
+	${7:Model::all();}
+	${8:Model::find(1);}
+	// Find using dual primary key
+	${9:Model::find(array('first', 'last'));}
+	// Throw an exception if the lookup fails
+	${10:Model::findOrFail(1);}
+	// Find using dual primary key and throw exception if the lookup fails
+	${11:Model::findOrFail(array('first', 'last'));}
+	${12:Model::where('foo', '=', 'bar')->get();}
+	${13:Model::where('foo', '=', 'bar')->first();}
+	// dynamic
+	${14:Model::whereFoo('bar')->first();}
+	// Throw an exception if the lookup fails
+	${15:Model::where('foo', '=', 'bar')->firstOrFail();}
+	${16:Model::where('foo', '=', 'bar')->count();}
+	${17:Model::where('foo', '=', 'bar')->delete();}
+	//Output raw query
+	${18:Model::where('foo', '=', 'bar')->toSql();}
+	${19:Model::whereRaw('foo = bar and cars = 2', array(20))->get();}
+	${20:Model::remember(5)->get();}
+	${21:Model::remember(5, 'cache-key-name')->get();}
+	${22:Model::cacheTags('my-tag')->remember(5)->get();}
+	${23:Model::cacheTags(array('my-first-key','my-second-key'))->remember(5)->get();}
+	${24:Model::on('connection-name')->find(1);}
+	${25:Model::with('relation')->get();}
+	${26:Model::all()->take(10);}
+	${27:Model::all()->skip(10);}
+	// Default Eloquent sort is ascendant
+	${28:Model::all()->orderBy('column');}
+	${29:Model::all()->orderBy('column','desc');}
+	                
+Soft Delete
+	${30:Model::withTrashed()->where('cars', 2)->get();}
+	// Include the soft deleted models in the results
+	${31:Model::withTrashed()->where('cars', 2)->restore();}
+	${32:Model::where('cars', 2)->forceDelete();}
+	// Force the result set to only included soft deletes
+	${33:Model::onlyTrashed()->where('cars', 2)->get();}
+	                
+Events
+	${34:Model::creating(function($model){\});}
+	${35:Model::created(function($model){\});}
+	${36:Model::updating(function($model){\});}
+	${37:Model::updated(function($model){\});}
+	${38:Model::saving(function($model){\});}
+	${39:Model::saved(function($model){\});}
+	${40:Model::deleting(function($model){\});}
+	${41:Model::deleted(function($model){\});}
+	${42:Model::observe(new FooObserver);}
+	                
+Eloquent Configuration
+	// Disables mass assignment exceptions from being thrown from model inserts and updates
+	${43:Eloquent::unguard();}
+	// Renables any ability to throw mass assignment exceptions
+	${44:Eloquent::reguard();}
+
+</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>la.Eloquent</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>Eloquent</description>
+</snippet>

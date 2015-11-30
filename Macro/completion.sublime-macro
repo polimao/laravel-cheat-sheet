@@ -1,0 +1,13 @@
+[
+	{
+		"args":
+		{
+			"characters": "<"
+		},
+		"command": "insert"
+	},
+	{
+		"args": null,
+		"command": "tag_close_tag_on_slash"
+	}
+]

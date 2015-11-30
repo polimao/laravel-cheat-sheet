@@ -1,0 +1,44 @@
+<snippet>
+	<content>
+MarkDown 命令
+	1、标签
+		@(标签)[1|2|3]
+	2、图片
+		![图片](1234.jpg)
+	3、标记
+		`标记`
+	4、字体
+		**粗体**
+		*斜体*
+	5、关系
+		# 字号
+			- 子项
+			* 子项
+			+ 子项
+	6、引用
+		> 号外
+		> 号外
+	7、链接
+		[链接](baidu.com)
+	8、分割线
+		---- 
+	9、代码块
+		``` php
+		<?php
+		  echo '123';
+		?>
+		```
+	10、表格
+		| 左对齐     |   右对齐 |中间对齐|
+		| :-------- | --------:| :--: |
+		| Computer  | 1600 USD |  5   |
+		| Phone     |   12 USD |  12  |
+		| Pipe      |    1 USD | 234  |
+	11、tab 有背景的引用
+	</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wiki.MarkDown</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<description>MarkDown</description>
+</snippet>
