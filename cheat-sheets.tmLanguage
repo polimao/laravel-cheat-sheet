@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>cheatsheet</string>
+	</array>
+	<key>name</key>
+	<string>Cheat Sheet</string>
+	<key>patterns</key>
+	<array>
+		<!-- Colors based on Monokai scheme --!>
+		<!-- Subtext: Yellow -->
+		<dict>
+			<key>match</key>
+			<string>^>\t\t.*</string>
+			<key>name</key>
+			<string>string</string>
+		</dict>
+		<!-- Header: Purple -->
+		<dict>
+			<key>match</key>
+			<string>^>\t.*</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<!-- Comment: Grey -->
+		<dict>
+			<key>match</key>
+			<string>[#].*</string>
+			<key>name</key>
+			<string>comment</string>
+		</dict>
+		<!-- Keycode: Green -->
+		<dict>
+			<key>match</key>
+			<string>^\t.*(?=#)|^\t.*(?=\t)</string>
+			<key>name</key>
+			<string>entity.name.function</string>
+		</dict>
+		<!-- Keycode: Green -->
+		<dict>
+			<key>match</key>
+			<string>^\t.*(?=\n)</string>
+			<key>name</key>
+			<string>entity.name.function</string>
+		</dict>
+		<!-- Keycode: Green -->
+		<dict>
+			<key>match</key>
+			<string>^.*\s\s</string>
+			<key>name</key>
+			<string>entity.name.function</string>
+		</dict>
+		<!-- Keycode: Green -->
+		<dict>
+			<key>match</key>
+			<string>^\S.*\t</string>
+			<key>name</key>
+			<string>entity.name.function</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.cheat-sheet</string>
+</dict>
+</plist>

@@ -1,0 +1,122 @@
+>	A Better Vim Cheat Sheet
+>		This is a VIM cheat sheet created by Chase Lambert, found @ http://vimsheet.com/, converted by David Hunt
+
+>	Cursor movement (Inside command mode)
+
+	w 												jump by start of words (punctuation considered words)
+	W 												jump by words (spaces separate words)
+	e 												jump to end of words (punctuation considered words)
+	E 												jump to end of words (no punctuation)
+	b 												jump backward by words (punctuation considered words)
+	B 												jump backward by words (no punctuation)
+	0 												(zero) start of line
+	^ 												first non-blank character of line (same as 0w)
+	$ 												end of line
+
+>	Cursor Movement Advanced (in order of what I find useful)
+
+	Ctrl+d 										move down half a page
+	Ctrl+u										move up half a page
+	} 												go forward by paragraph (the next blank line)
+	{ 												go backward by paragraph (the next blank line)
+	gg 												go to the top of the page
+	G 												go the bottom of the page
+	:<num><enter>							Go To that line in the document
+
+>	Cursor Movement Searching
+>		All these commands can be followed by ; (semicolon) to go to the next searched item, and , (comma) to go the the previous searched item
+
+	f<char> 									Move to the next char on the current line after the cursor
+	F<char> 									Move to the next char on the current line before the cursor
+	t<char> 									Move to before the next char on the current line after the cursor
+	T<char> 									Move to before the next char on the current line before the cursor
+
+>	Insert/Appending/Editing Text
+>		Results in insert mode
+
+    i 											start insert mode at cursor
+    I 											insert at the beginning of the line
+    a 											append after the cursor
+    A 											append at the end of the line
+    o 											open (append) blank line below current line (no need to press return)
+    O 											open blank line above current line
+    cc 											change (replace) an entire line
+    c<movement command> 		change (replate) from the cursor to the move-to point.
+    												ex. ce changes from the cursor to the end of the cursor word
+		Esc											exit insert mode
+    r<char>									replace a single character with the specified char (does not use insert mode)
+    d												delete
+    dd											delete the current line
+    d<movement command>			deletes from the cursor to the move-to point.
+												    ex. de deletes from the cursor to the end of the current word
+    J												join line below to the current one
+    s												delete character at cursor and substitute text
+    S												delete line at cursor and substitute text (same as cc)
+
+>	Marking text (visual mode)
+>		Navigation is just like in normal mode
+
+    v												start visual mode, mark lines, then do command (such as y-yank)
+    V												start Linewise visual mode
+    Ctrl+v									start visual block mode
+    Esc											exit visual mode
+    gv											reselect (select last selected block of text)
+    O												move to Other corner of block
+    o												move to other end of marked area
+
+>	Visual commands
+
+    y												yank (copy) marked text
+    d												delete marked text
+    c												delete the marked text and go into insert mode (like c does above)
+
+>	Cut and Paste
+>		Ctrl+r + 0 in insert mode inserts the last yanked text. This is helpful if you deleted something with d, which overwrote your normal p register.
+
+    yy											yank (copy) a line
+    p												put (paste) the clipboard after cursor
+    P												put (paste) before cursor
+    dd											delete (cut) a line
+    x												delete (cut) current character
+    X												delete previous character (like backspace)
+
+>	Exiting
+
+    :w											write (save) the file, but don't exit
+    :wq											write (save) and quit
+    :q											quit (fails if anything has changed)
+    :q!											quit and throw away changes
+
+>	Search/Replace
+
+    /pattern								search for pattern
+    ?pattern								search backward for pattern
+    n												repeat search in same direction
+    N												repeat search in opposite direction
+    :%s/old/new/g						replace all old with new throughout file
+    :%s/old/new/gc					replace all old with new throughout file with confirmations
+
+>	Working with multiple files
+
+    :e filename							Edit a file in a new buffer
+    :tabe										make a new tab
+    gt											go to the next tab
+    gT											go to the previous tab
+    :vsp										vertically split windows
+    ctrl+ws									Split windows horizontally
+    ctrl+wv									Split windows vertically
+    ctrl+ww									switch between windows
+    ctrl+wq									Quit a window
+
+>	Marks
+>		A capital mark {A-Z} sets a global mark and will work between files
+
+    m{a-z}									Set mark {a-z} at cursor position
+    ‘{a-z}									move the cursor to the start of the line where the mark was set
+    ‘’											go back to the previous jump location
+
+>	General
+
+    u												undo
+    Ctrl+r									redo
+    .												repeat last command

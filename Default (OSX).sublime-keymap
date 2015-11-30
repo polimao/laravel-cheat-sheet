@@ -1,0 +1,82 @@
+[
+  {
+    "keys": [
+      "super+shift+c",
+      "g",
+      "f",
+      "m"
+    ],
+    "command": "cheat_sheet",
+    "args": {
+      "cheatsheet": "Github Flavored Markdown"
+    }
+  },
+  {
+    "keys": [
+      "super+shift+c",
+      "g",
+      "i",
+      "t"
+    ],
+    "command": "cheat_sheet",
+    "args": {
+      "cheatsheet": "Git"
+    }
+  },
+  {
+    "keys": [
+      "super+shift+c",
+      "g",
+      "o"
+    ],
+    "command": "cheat_sheet",
+    "args": {
+      "cheatsheet": "Go"
+    }
+  },
+  {
+    "keys": [
+      "super+shift+c",
+      "k",
+      "d",
+      "e"
+    ],
+    "command": "cheat_sheet",
+    "args": {
+      "cheatsheet": "KDE"
+    }
+  },
+  {
+    "keys": [
+      "super+shift+c",
+      "s",
+      "t"
+    ],
+    "command": "cheat_sheet",
+    "args": {
+      "cheatsheet": "Sublime Text"
+    }
+  },
+  {
+    "keys": [
+      "super+shift+c",
+      "r",
+      "x"
+    ],
+    "command": "cheat_sheet",
+    "args": {
+      "cheatsheet": "Regular Expressions"
+    }
+  },
+  {
+    "keys": [
+      "super+shift+c",
+      "s",
+      "h"
+    ],
+    "command": "cheat_sheet",
+    "args": {
+      "cheatsheet": "Bash"
+    }
+  }
+]

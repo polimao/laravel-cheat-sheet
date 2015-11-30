@@ -1,0 +1,373 @@
+>	Go Cheat Sheet
+>		A cheat sheet for Go-Lang.
+
+>	Package Declaration
+>		Every Go program must declare itself as a package or a library.
+	package main
+
+>	Import
+>		The import keyword is how to include packages to use with the program.
+	import "fmt"
+
+	import (
+		"fmt"
+		"math"
+		)
+
+
+fmt package - implements formatting for input and output.
+
+String literal - `Backticks around something makes it a string literal. A string literal can contain newlines and %d and whatnots.`
+
+Comments - // are used to comment things.
+Multi-line comments - /* This comment can be multiple lines. */
+
+Functions - start with the keyword func, followed by the name of the function, (parameters), and a {body}.
+func main() {
+statements
+}
+
+main gets called when the program is executed.
+
+fmt.Println("Hello, World!") accesses the Println function within fmt with 1 parameter.
+
+godoc fmt Println for a function's documentation.
+Ch 3
+
+Types - all values of a type share certain properties.
+
+Statically typed - Variables always have a specified type and that type cannot change.
+
+Integer types - 8,16, etc indicates how many bits each type uses.
+integer - int8, int16, int32, int64
+unsigned integers - only positive integers, uin8, uint16, uint32, uint64
+byte - same as uint8, = 8 bits.
+rune - int32
+int, uint, uintptr - machine dependent types.
+
+Floating point numbers - a number with a decimal.
+float32, float64
+
+Complex numbers - numbers with imaginary parts.
+complex64, complex128
+
+Non-numerical values
+NaN - nont a number (ie 0/0)
++∞, -∞
+
+Shortcuts:
+Run file: Ctrl+F11
+gofmt: Ctrl+Shift+f
+autocomplete: Ctrl+Space
+
+Mathematical Operators in Go
++: addition
+-: subtraction
+*: multiplication
+/: division
+%: remainder or modulus
+
+"Hello World" cannot contain newlines but has escape sequences
+\n newline
+\t tab
+`Hello World`
+
+Some string functions:
+len("Hello World"): length of a string
+"Hello World"[1]: Second character of a string (indexed from 0)
+"Hello" + "World": String concatenation.
+
+Boolean - 1 bit integer type used to represent true or false.
+&&: and
+||: or
+!: not
+Ch4 Variables
+A variable is a storage location with a specific type and associated name.
+
+Format: var keyword, variable name, type, and assignment.
+var x string = "Hello, World!"
+Assignment can be performed after initialization:
+var y string
+y = "Hello, World!"
+
+=: variable assignment symbol
+x = "y" means that x is assigned the string "y", not exactly x equals y.
+
++=: x += "y" is the same as x = x + y.
+-=
+*=
+/=
+%=
+
+==: equality boolean operator, u == v is true if u is equal to v.
+
+Type inferencing is also possible
+var x = "Hello, World!"
+y := "Hello, World!"
+
+variable names can use a-z,A-Z,0-9, and _
+Lower camel case can be used - thisIsInLowerCamelCase. The first word begins lowercase and every word after that begins uppercase. Also called mixed case, bumpy caps, camel back, or hump back.
+
+Scope: Go is lexically scoped using blocks. Basically, a variable is only available to other variables and functions within within it's {}.
+Constants: the const keyword can define a constant.
+
+Defining multiple variables
+var (
+a = 5
+b = 10
+c = 15)
+
+fmt.Scanf: Use to read user input.
+Ch5 Control Structures
+
+for statement: Execute block repeatedly until false.
+for condition {execute block}
+
+for i <= 10 {
+fmt.Println(i)
+i += 1
+}
+
+for i := 1; i <= 10; i++ {
+fmt.Prinln(i)
+}
+
+<= Less than or equal boolean operator
+>= Greater than or equal boolean operator
+< Less than boolean operator
+> Greater than boolean operator
+
+++: i++ means i += 1
+--: i-- means i -= 1
+
+if statements: executes first true block.
+if condition {
+execute
+}
+
+if condition {st
+execute
+} else {
+execute
+}
+
+if condition {
+execute
+} else if condition {
+execute
+}
+
+Switch
+	A switch statement executes the first block that is conditionally equivalent, and if none are then the default block is executed.
+
+switch i {						Test the variable i.
+	case test: execute			If test is true then execute.
+	default: execute				If no tests are true then execute.
+}								 End switch
+
+Data Structures: Arrays, Slices, and Maps.
+
+Arrays
+	An array is a numbered and fixed length sequence of elements of a single type.
+
+var identifier [length]type	 The variable x is an array with 5 integers.
+x := [3]str					 The variable x is an array with 3 empty strings.
+x := [3]float64{1, 2, 3}		The variable x is a prefilled array with 3 float64s.
+x := [2][2]int{{1, 2}, {1, 2}}	The variable x is a multidimensional array of ints.
+x[0]							The first element of x.
+x[:]							Every element of the array.
+x[1:3]							Elements indexed at 1, 2.
+x[:3]							 Elements from 0 to 2, ≡ x[0:3].
+x[1:]							 Every element after 1, ≡ x[1:len(x)-1].
+len(x)							The length of array x.
+
+for i:=0; i < len(arr); i++ {}	Loop over every element of the array.
+for i:= range arr {}			Loop over every elemetn of the array.
+
+To convert between types, use the type as a function.
+float64(x) will convert an int into a float64.
+
+range keyword: iterate over a range.
+for i, value := range x {}
+where x is an array. If i is unused, then an underscore can be used.
+
+>	 Slices
+>		 A slice is a numbered sequence of pointers to the elements of an underlying array.
+var x []float64				The variable x is a slice of float64s
+x := make([]float64, 5)		The variable x is a slice of float64s associated with an array of length 5.
+x := make([]float64, 5, 10)	is a slice of len 5 from an array of len 10.
+
+Common Slice Operations
+a = append(a, b...)	Append the elements of b into a.
+
+b = make([]T, len(a))	Make an array the size of a and
+copy(b, a)	copy the pointers of a into b.
+
+a = append(a[:i], a[j:]...)
+
+arr := []float64{1,2,3,4,5}
+x := arr[0:5]; note that 5 is the indexes past the last point.
+arr[0:] == arr[0:len(arr)]
+arr[:5] == arr[0:5]
+
+>	Append
+>		Appends the values to the slice.
+	slice1 := int{1,2,3}			# [1, 2, 3]
+	slice2 := append(slice1, 4, 5)	# [1, 2, 3, 4, 5]
+
+>	Copy
+>		The copy function copies the values of one slice to another slice. Copy does not expand the second slice to accomodate all of the elements of the first slice. A copy of a slice of slices will copy all of the sub-slices, but not their elements, which will continue being pointers to the elements of the original sub-slice.
+
+	slice1 := []int{1,2,3}
+	slice2 := make([]int,2)
+	copy(slice2, slice1)	# Copy slice1 into the slice2.
+
+>	Maps
+>		Maps are an unordered collection of key-value pairs. Also called an associative array, hash table, or dictionary.
+var x map[string]int	The variable x is a map of string keys that give integer values.
+
+x := make(map[string]int)
+x["key"] = 10
+fmt.Println(x["key"])
+
+delete function: delete a key:value mapping from a map.
+delete(x, 1)
+
+A map lookup can return a second boolean value on whether or not the lookup was a success.
+name, ok := x["key"]
+
+A map can be quickly created like slices and arrays:
+elements := map[string]string{
+"H": "Hydrogen",
+"He": "Helium",
+}
+
+A map can also map to a map. See Ch6 maps.go example, however there are better ways to structure data.
+Ch 7 Functions
+A function is an independent section of code that maps zero or more unput parameters to zero or more output parameters. Also called procedures or subroutines.
+func name(parameters) return type {}
+func average(xs []float64) float64 {}: the average function takes a slice of float64 and returns a float64.
+The parameters and return type of a function is it's signature.
+
+panic function: causes a runtime error.
+
+return statement: Causes the function to immediately stop and return the value after it to the function that called it. Mutiple values can be returned with comma seperation.
+
+variadic function: using ... before the type name of the last parameter indicates that it can take 0 or more of those parameters.
+func add(args ...int) int {}
+To pass the values of a slice use slice...
+fmt.Println(add(slice...))
+
+Closure: Allows you to create functions inside of functions.
+func main() {
+add := func(x, y, int) int {}
+}
+Add will be within the scope of main and have read and write access to other variables within main. The function and the variable form a closure but idk why.
+
+Defer: schedules a function call to be run after the function completes.
+func main() {
+defer second()
+first()
+}
+Deferred functions run even with a run-time panic, and are good for closing files after they have been opened.
+
+panic: causes a runtime error.
+panic("Panic!!!")
+recover: stops the panic and returns the value that was passed to panic. Needs to be deferred before the panic.
+Ch8 Pointers
+
+Pointers reference a location in memory where a value is stored rather than the value itself.
+*type: turns type into a pointer of that type, ie *int
+var name *int
+*name = 0 \\ Dereferences the pointer and stores 0 in the location being pointed to.
+&var: Gives a variables address
+x = 5
+*name = &x
+
+new takes a type as an argument and returns a pointer to it.
+xPtr := new(int)
+*xPtr = 1
+
+Ch9: Structs and Interfaces
+
+type keyword introduces a new type.
+type name struct {x,y,r float64}
+var c Circle
+c := new(Circle) //Returns a pointer of type *Circle
+c := Circle{x: 0, y: 0, r: 5}
+c := Circle{0, 0, 5}
+
+The fields of a struct can be accessed with the . operator.
+c.x // 0
+c.x = 10
+
+Methods are functions of a struct that can be evaluated with the . operator.
+func (c *Circle) area() float64{} // (c *Circle) is the receiver and forms the method.
+c.area()
+
+Embedded types, or anonymous fields, allows for types to have types underneath them implemented.
+type Android struct {
+Person
+Model string
+}
+
+Interfaces make similarities between types explicit.
+type Shape interface {
+area() float64
+} //For a struct to implement this interface it must have an area method that gives a float64.
+
+Goroutines run small functions concurrently.
+go func()
+
+Channels allow multiple goroutines to communicate and synchronize with each other.
+var c chan type
+c <- "ping" // Sends the string ping onto the chan c.
+msg := <- c //receives the string ping from the chan c.
+Channels block until the other party is ready to communicate.
+The channel type can be used to specify directionality as well.
+chan<-: can only send to the channel.
+<-chan: can only receive from the channel.
+
+select is the same as switch for channels - it takes the first channel that is ready and receives from it.
+select {
+case msg1 := <- c1:
+execute
+case msg2 := <- c2:
+execute
+}
+A default case can also be used.
+select {
+case msg1 := <- c1:
+execute
+default:
+execute
+}
+
+Buffered channels are asynchronous and will not block while waiting.
+c := make(chan int, 5) //Will hold 5 messages before blocking.
+
+Ch11 Packages
+
+You can import packages using import "folder/to/packageName". The package must be installed and there can't be spaces in the full folder name. There can only be one install per folder and all subfolders are included. To install use:
+go install folder/to/ //Will start from $GOPATH/src
+
+Packages with the same name are used hierarchically by folder, however if two packages have the same name you can alias them.
+import alias "folder/to/packagename"
+Imported packages with functions with capital letters are accessible.
+
+Documentation of a installed packaged is found with
+godoc package
+godoc path/to/package Function
+Functions can be documented with a comment before the function.
+
+Testing can be done with a package_test.go file. In it you import "testing", and TestFunction(t *testing.T) {}
+
+To pass cli arguments, use -v flag.
+go run -v myfile.go -arg=x
+To pick up x, use:
+import "flag"
+maxp := flag.Int("arg", default, "title")
+flag.Parse()
+Additional, unparsed flags are in flag.Args() which returns a []string.
+
+Synchronization primitives are available in the sync/atomic package.
