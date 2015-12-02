@@ -3,7 +3,7 @@
 - 适用于使用Laravel框架的PHP开发者
 - 它是我收集以及自己整理出来的laravel开发手册（多参考[laravel小抄](http://cheats.jesse-obrien.ca/)）
 - 支持laravel最新5.1版本
-- 
+
 # 图示
 - ![片段列表](http://img.hb.aicdn.com/05ffd599677a897c74b037046e6aae5aba326d8ecba6-hKFIYs_fw658) 
 - ![artisan](http://img.hb.aicdn.com/e6778605464fe3601dba005133fada53103f5edb24ef6-TDDvrZ_fw658) 
