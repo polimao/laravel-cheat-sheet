@@ -1,0 +1,38 @@
+[
+    // 使用浏览器打开
+    { "keys": ["super+e"], "command": "open_in_browser" },
+    // ×Ô¶¯Ëõ½ø
+    { "keys": ["alt+tab"], "command": "reindent" },
+    // 更好的粘贴
+    { "keys": ["super+v"], "command": "paste_and_indent" },
+    // 自动完成分号
+    { "keys": ["super+;"], "command": "run_macro_file","args":{"file": "res://Packages/User/Macro/FenHao.sublime-macro"} },
+    { "keys": ["super+t"], "command": "new_file","args":{"file": "res://Packages/User/Snippet/Tip_String.sublime-snippet"} },
+    // 自动完成括号
+    { "keys": ["alt+["], "command": "run_macro_file","args":{"file": "res://Packages/User/Macro/DaKuoHao.sublime-macro"} },
+    // 自动完成标签
+    { "keys": ["super+."], "command": "run_macro_file","args":{"file": "res://Packages/User/Macro/completion.sublime-macro"} },
+    // 匹配所有
+    { "keys": ["super+g"], "command": "find_all_under" },
+
+    // 翻译
+    {"keys": ["super+shift+g"], "command": "go_translate"},
+    {"keys": ["ctrl+shift+alt+g"], "command": "go_translate_to"},
+
+    // 快捷排版
+    { "keys": ["super+down"], "command": "swap_line_down" },
+    { "keys": ["super+up"], "command": "swap_line_up" },
+    { "keys": ["super+k", "super+shift+up"], "command": "new_pane", "args": {"move": false} },
+
+    { "keys": ["super+shift+h"], "command": "alignment" },
+    // 自动刷新浏览器
+    {
+      "keys": ["super+shift+r"], "command": "browser_refresh", "args": {
+        "auto_save": true,
+        "delay": 0.0,
+        "activate": true,
+        "browsers" : ["firefox"]
+      }
+    },
+    { "keys": ["super+shift+1"], "command": "example" }
+]
