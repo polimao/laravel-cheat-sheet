@@ -1,5 +1,11 @@
-# 简介
-- laravel-cheat-sheet 是一款sublime插件
+# Laravel Cheat Sheet for Sublime Text
+
+[![Latest Version][ico-latest-version]][link-latest-version]
+![Laravel Version][ico-laravel-version]
+[![Package Control][ico-package-control]][link-package-control]
+
+### Introduction
+- Laravel Cheat Sheet 是一款sublime插件
 - 适用于使用Laravel框架的PHP开发者
 - 它是我收集以及自己整理出来的laravel开发手册（多参考[laravel小抄](http://cheats.jesse-obrien.ca/)）
 - 支持laravel最新5.1版本
@@ -15,3 +21,17 @@
 - ![views](http://img.hb.aicdn.com/796e41cf5142f8c0b1d5b1acda43cf9d728ef1d71409a-3wdN5k_fw658) 
 - ![input](http://img.hb.aicdn.com/a53400a3895c0a5ed94f911517f556aaeb2cb6a119ce0-9Myxyb_fw658) 
 - 等
+
+## Credits
+
+- [Patrick Samson][link-author]
+- [All Contributors][link-contributors]
+
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[link-author]: https://github.com/lykegenes
+[link-contributors]: ../../contributors
+[link-latest-version]: https://github.com/Lykegenes/laravel-5-snippets/releases
