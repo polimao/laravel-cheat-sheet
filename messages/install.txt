@@ -34,4 +34,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [link-author]: https://github.com/lykegenes
 [link-contributors]: ../../contributors
-[link-latest-version]: https://github.com/Lykegenes/laravel-5-snippets/releases
+[link-latest-version]: https://github.com/yepolite/laravel-cheat-sheet/releases
