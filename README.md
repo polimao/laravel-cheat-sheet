@@ -20,7 +20,7 @@
 
 ## Credits
 
-- [Patrick Samson][link-author]
+- [Yepolite][link-author]
 - [All Contributors][link-contributors]
 
 
@@ -28,6 +28,6 @@
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[link-author]: https://github.com/lykegenes
+[link-author]: https://github.com/yepolite
 [link-contributors]: ../../contributors
 [link-latest-version]: https://github.com/yepolite/laravel-cheat-sheet/releases
