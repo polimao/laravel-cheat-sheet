@@ -1,11 +1,7 @@
 # Laravel Cheat Sheet for Sublime Text
 
-[![Latest Version][ico-latest-version]][link-latest-version]
-![Laravel Version][ico-laravel-version]
-[![Package Control][ico-package-control]][link-package-control]
-
 ### Introduction
-- Laravel Cheat Sheet 是一款sublime插件
+- Laravel Cheat Sheet is a sublime text package.
 - 适用于使用Laravel框架的PHP开发者
 - 它是我收集以及自己整理出来的laravel开发手册（多参考[laravel小抄](http://cheats.jesse-obrien.ca/)）
 - 支持laravel最新5.1版本
