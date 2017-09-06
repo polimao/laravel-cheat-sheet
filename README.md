@@ -2,8 +2,8 @@
 
 ### Introduction
 - Laravel Cheat Sheet is a sublime text package.
-- Suitable for using Laravel framework for PHP developers
-- It is I collect and sort out their Laravel development manual（more reference[laravel cheat sheet](http://cheats.jesse-obrien.ca/)）
+- Suitable for PHP developers use the Laravel framework 
+- I have collected and sorted the Laravel development manual（more reference[laravel cheat sheet](http://cheats.jesse-obrien.ca/)）
 - Support laravel latest version 5.*
 
 # Graphic
